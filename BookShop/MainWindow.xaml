@@ -1,0 +1,18 @@
+﻿<Window x:Class="BookShop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookShop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Label Name="lbl" Content="Сеть книжных магазинов" FontSize="30" HorizontalAlignment="Center"></Label>
+            <Button Name="Bookbtn" Content="Библиотека" FontSize="25" Click="Bookbtn_Click"></Button>
+            <Button Name="Shopbtn" Content="Адреса магазинов" FontSize="25" Click="Shopbtn_Click"></Button>
+            <Button Name="Availbtn" Content="Наличие книг в магазинах" FontSize="25" Click="Availbtn_Click"></Button>
+            <Button Name="Outbtn" Content="Выйти из программы" FontSize="25" Click="Outbtn_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

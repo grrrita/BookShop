@@ -1,0 +1,67 @@
+﻿<Window x:Class="BookShop.AvailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookShop"
+        mc:Ignorable="d"
+        Title="AvailWindow" Height="525" Width="744">
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="268*" />
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="114*"></ColumnDefinition>
+            <ColumnDefinition Width="98*"></ColumnDefinition>
+            <ColumnDefinition Width="103*"></ColumnDefinition>
+            <ColumnDefinition Width="164*"></ColumnDefinition>
+            <ColumnDefinition Width="86*"></ColumnDefinition>
+            <ColumnDefinition Width="179*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListView Name="AvailsList" ItemsSource="{Binding}"
+                  MinWidth="250" MinHeight="100"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"  SelectionChanged="AvailsList_SelectionChanged" Margin="0,0,56,0" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Магазин" DisplayMemberBinding="{Binding Path=IdShop}"></GridViewColumn>
+                    <GridViewColumn Header="Книга"   DisplayMemberBinding="{Binding Path=IdBook}" Width="200"></GridViewColumn>
+                    <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding Path=Count}" Width="200"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0,10,14,0" Grid.Row="1" >
+            <Label Margin="5">Магазин</Label>
+            <Label Margin="5">Книга</Label>
+            <Label Margin="5">Количество</Label>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Orientation="Vertical" Margin="0,10,14,0" Grid.Row="1" >
+            <Label Margin="5">Адрес:</Label>
+            <Label Margin="5">Название:</Label>
+        </StackPanel>
+
+        <StackPanel Grid.Column="4" Orientation="Vertical" Margin="0,10,14,0" Grid.Row="1" >
+            <Label Margin="5">Директор:</Label>
+            <Label Margin="5">Автор:</Label>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="10,10,1,0" Grid.Row="1" Grid.Column="3" >
+            <TextBox x:Name="tbAdd" Margin="8" IsEnabled="False" ></TextBox>
+            <TextBox x:Name="tbNameOfBook" Margin="8" IsEnabled="False" ></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="10,10,1,0" Grid.Row="1" Grid.Column="5" >
+            <TextBox x:Name="tbDir" Margin="8" IsEnabled="False" ></TextBox>
+            <TextBox x:Name="tbAithor" Margin="8" IsEnabled="False" ></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="10,10,1,0" Grid.Row="1" Grid.Column="1" >
+            <TextBox x:Name="tbShop" Margin="8" DataContext="{Binding ElementName=AvailsList,Path=SelectedItem}" Text="{Binding Path=IdShop}"></TextBox>
+            <TextBox x:Name="tbBook" Margin="8" DataContext="{Binding ElementName=AvailsList,Path=SelectedItem}" Text="{Binding Path=IdBook}"></TextBox>
+            <TextBox x:Name="tbCount" Margin="8" DataContext="{Binding ElementName=AvailsList,Path=SelectedItem}" Text="{Binding Path=Count}"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,7,2,2" >
+            <Button x:Name="btnAdd" Margin="8" Click="btnAdd_Click">Добавить</Button>
+            <Button x:Name="btnUpdate" Margin="8" Click="btnUpdate_Click">Обновить</Button>
+            <Button x:Name="btnDelete" Margin="8" Click="btnDelete_Click">Удалить</Button>
+            <Button x:Name="btnClear" Margin="8" Click="btnClear_Click">Очистить</Button>
+        </StackPanel>
+    </Grid>
+</Window>
