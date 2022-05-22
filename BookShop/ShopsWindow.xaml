@@ -47,8 +47,8 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1" Orientation="Vertical" Margin="0,276,0,0" Grid.RowSpan="2" >
-            <TextBox x:Name="tbAddress" Margin="8" DataContext="{Binding ElementName=ShopsList,Path=SelectedItem}" Text="{Binding Path=Name}"></TextBox>
-            <TextBox x:Name="tbDirector" Margin="8" DataContext="{Binding ElementName=ShopsList,Path=SelectedItem}" Text="{Binding Path=Author}"></TextBox>
+            <TextBox x:Name="tbAddress" Margin="8" DataContext="{Binding ElementName=ShopsList,Path=SelectedItem}" Text="{Binding Path=Address}"></TextBox>
+            <TextBox x:Name="tbDirector" Margin="8" DataContext="{Binding ElementName=ShopsList,Path=SelectedItem}" Text="{Binding Path=Director}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,7,0,6" >
             <Button x:Name="btnAdd" Margin="8" Click="btnAdd_Click">Добавить</Button>
